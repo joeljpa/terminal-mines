@@ -153,6 +153,7 @@ void game_loop(WINDOW *window, struct minesweeper_game *game, struct tm_options 
 			break;
 
 		case ',':
+		case 'a':
 			minesweeper_open_tile(game, game->selected_tile);
 			update_status_window(status_win, game);
 			break;
