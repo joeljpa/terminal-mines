@@ -180,7 +180,12 @@ void game_loop(WINDOW *window, struct minesweeper_game *game, struct tm_options 
 	int screen_width, screen_height;
 	getmaxyx(stdscr, screen_height, screen_width);
 	int window_width = strlen(end_text) + 2;
-	WINDOW *end_win = newwin(3, window_width, screen_height / 2 + 4, screen_width / 2 - window_width / 2);
+    // WINDOW *end_win = newwin(3, window_width, screen_height / 2 + 4, screen_width / 2 - window_width / 2);
+	// WINDOW *end_win = newwin(3, window_width, (screen_height / 2 + (screen_height / 2) + 4), screen_width / 2 - window_width / 2);
+	// WINDOW *end_win = newwin(3, window_width, (screen_height / 2 + (screen_height / 5) + 2), screen_width / 2 - window_width / 2);
+	// WINDOW *end_win = newwin(3, window_width, game->height - screen_height + 10, screen_width / 2 - window_width / 2);
+	// WINDOW *end_win = newwin(3, window_width, game->height + 5, screen_width / 2 - window_width / 2);
+	WINDOW *end_win = newwin(3, window_width, screen_height - 3, screen_width / 2 - window_width / 2);
 	box(end_win, 0, 0);
 	mvwprintw(end_win, 1, 1, end_text);
 	wrefresh(end_win);
